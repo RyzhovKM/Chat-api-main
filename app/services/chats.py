@@ -29,7 +29,7 @@ def get_chat_with_messages(db: Session, chat_id: int, limit: int):
     messages = (
         db.query(Message)
         .filter(Message.chat_id == chat_id)
-        .order_by(Message.created_at.desc())
+        .order_by(Message.created_at.desc(), Message.id.desc())
         .limit(limit)
         .all()
     )
