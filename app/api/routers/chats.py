@@ -1,7 +1,6 @@
-from fastapi import APIRouter, Depends, Query, HTTPException
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
-from app.core.database import SessionLocal
 from app.schemas.chat import ChatCreate, ChatResponse
 from app.schemas.message import MessageCreate, MessageResponse
 from app.services import chats as service
